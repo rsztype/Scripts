@@ -9,6 +9,7 @@ Only whole words count: ExtraBold/SemiBold are NOT linked as Bold.
 
 import GlyphsApp
 import vanilla
+import vanilla.dialogs   # submodule isn't pulled in by `import vanilla` alone
 
 ITALIC_WORDS = ("Italic", "Oblique")
 

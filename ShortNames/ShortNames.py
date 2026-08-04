@@ -10,6 +10,7 @@ Family name and style name stay untouched.
 import re
 import GlyphsApp
 import vanilla
+import vanilla.dialogs   # submodule isn't pulled in by `import vanilla` alone
 
 ABBREVIATIONS = {
 	"Regular": "Rg",
