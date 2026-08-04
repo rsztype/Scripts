@@ -101,7 +101,7 @@ class ShortNamesPanel:
 				"New": f"{family}-{shorten_style(style)}",
 			})
 
-		self.w = vanilla.FloatingWindow((560, 380), "Short PS Names + File Names", minSize=(420, 260))
+		self.w = vanilla.FloatingWindow((560, 380), "✂️ Short PS Names + File Names", minSize=(420, 260))
 		self.w.list = vanilla.List(
 			(10, 10, -10, -70),
 			items,
