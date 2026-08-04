@@ -4,6 +4,8 @@ By Giuseppe Salerno ([Resistenza Type](https://rsztype.com)).
 
 A script for the [Glyphs font editor](https://glyphsapp.com/). It previews and applies short PostScript font names and file names for every exportable instance, abbreviating each style word (`Condensed` → `Cn`, `ExtraBold` → `XBd`, `SemiCondensed` → `SmCn`, etc.) while leaving the family and style names themselves untouched.
 
+![Short Names preview panel.](ShortNamesScreenshot.png "Short Names Screenshot")
+
 ### What it does
 
 Run the script with a font open. It lists every active, non-variable instance with its current PostScript name and a suggested short one (`Family-AbbrStyle`), editable inline before you apply. On **Apply** it sets `postscriptFontName` and the `fileName` custom parameter on each instance, and warns about names that are missing a hyphen, longer than 29 characters, or duplicated — you can still apply anyway.

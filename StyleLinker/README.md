@@ -8,6 +8,8 @@ Style linking is what lets apps that don't understand OpenType family relationsh
 
 Only whole words count when matching: `ExtraBold` and `SemiBold` are never linked as `Bold`.
 
+![Style Linker preview panel.](StyleLinkerScreenshot.png "Style Linker Screenshot")
+
 ### What it does
 
 Run the script with a font open. It scans every active, non-variable instance and shows a preview table: for each instance, whether it links, to which base style, and whether it will be marked Bold/Italic. Nothing changes until you click **Apply** — click **Cancel** and nothing happens.
