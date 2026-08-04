@@ -8,7 +8,7 @@ Style linking is what lets apps that don't understand OpenType family relationsh
 
 Only whole words count when matching: `ExtraBold` and `SemiBold` are never linked as `Bold`.
 
-![Style Linker preview panel.](StyleLinkerScreenshot.png "Style Linker Screenshot")
+<img src="StyleLinkerScreenshot.png" alt="Style Linker preview panel." title="Style Linker Screenshot" width="450">
 
 ### What it does
 

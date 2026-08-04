@@ -4,7 +4,7 @@ By Giuseppe Salerno ([Resistenza Type](https://rsztype.com)).
 
 A script for the [Glyphs font editor](https://glyphsapp.com/). It previews and applies short PostScript font names and file names for every exportable instance, abbreviating each style word (`Condensed` → `Cn`, `ExtraBold` → `XBd`, `SemiCondensed` → `SmCn`, etc.) while leaving the family and style names themselves untouched.
 
-![Short Names preview panel.](ShortNamesScreenshot.png "Short Names Screenshot")
+<img src="ShortNamesScreenshot.png" alt="Short Names preview panel." title="Short Names Screenshot" width="450">
 
 ### What it does
 
