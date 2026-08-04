@@ -5,6 +5,7 @@ Scripts for the [Glyphs font editor](https://glyphsapp.com/), by [Resistenza Typ
 ## Contents
 
 - [**StyleLinker**](StyleLinker/) — previews and applies style linking (Bold/Italic/Bold Italic) for exportable instances.
+- [**ShortNames**](ShortNames/) — previews and applies short PostScript font names and file names for exportable instances.
 
 ## License
 
