@@ -101,9 +101,9 @@ class ShortNamesPanel:
 				"New": f"{family}-{shorten_style(style)}",
 			})
 
-		self.w = vanilla.FloatingWindow((560, 420), "Short PS Names + File Names", minSize=(420, 280))
+		self.w = vanilla.FloatingWindow((560, 380), "Short PS Names + File Names", minSize=(420, 260))
 		self.w.list = vanilla.List(
-			(10, 10, -10, -100),
+			(10, 10, -10, -70),
 			items,
 			columnDescriptions=[
 				{"title": "Instance", "editable": False, "width": 150},
@@ -111,11 +111,6 @@ class ShortNamesPanel:
 				{"title": "New", "editable": True},
 			],
 		)
-		self.w.pixelate = vanilla.CheckBox((12, -88, 160, 20), "Pixelate (bitmap)", sizeStyle="small")
-		self.w.gridLabel = vanilla.TextBox((176, -85, 30, 17), "Grid", sizeStyle="small")
-		self.w.grid = vanilla.EditText((206, -88, 50, 20), "100", sizeStyle="small")
-		self.w.compLabel = vanilla.TextBox((266, -85, 70, 17), "Pixel glyph", sizeStyle="small")
-		self.w.component = vanilla.EditText((336, -88, 90, 20), "pixel", sizeStyle="small")
 		self.w.info = vanilla.TextBox((12, -56, -10, 17), f"{len(items)} instances — edit the New column if needed.", sizeStyle="small")
 		self.w.cancelButton = vanilla.Button((-200, -32, 90, 20), "Cancel", callback=self.cancel)
 		self.w.applyButton = vanilla.Button((-100, -32, 90, 20), "Apply", callback=self.apply)
@@ -150,16 +145,6 @@ class ShortNamesPanel:
 			if not vanilla.dialogs.askYesNo("Problems found", "\n".join(problems) + "\n\nApply anyway?"):
 				return
 
-		pixelate = bool(self.w.pixelate.get())
-		pixel_filter = None
-		if pixelate:
-			grid = str(self.w.grid.get()).strip() or "100"
-			component = str(self.w.component.get()).strip() or "pixel"
-			if component not in self.font.glyphs:
-				if not vanilla.dialogs.askYesNo("Pixel glyph missing", f"The font has no glyph '{component}'. The Pixelate filter needs it at export.\n\nApply anyway?"):
-					return
-			pixel_filter = f"Pixelate; grid:{grid}; component:{component}; snapwidth:1"
-
 		failed = []
 		for instance, item in zip(self.instances, items):
 			name = str(item["New"]).strip()
@@ -169,10 +154,6 @@ class ShortNamesPanel:
 			if instance.customParameters["postscriptFontName"]:
 				del instance.customParameters["postscriptFontName"]
 			instance.customParameters["fileName"] = name
-			if pixelate:
-				instance.customParameters["Filter"] = pixel_filter
-			elif str(instance.customParameters["Filter"] or "").startswith("Pixelate"):
-				del instance.customParameters["Filter"]
 
 		if failed:
 			vanilla.dialogs.message("Short PS Names", "Could not set postscriptFontName on: " + ", ".join(failed))

@@ -8,8 +8,6 @@ A script for the [Glyphs font editor](https://glyphsapp.com/). It previews and a
 
 Run the script with a font open. It lists every active, non-variable instance with its current PostScript name and a suggested short one (`Family-AbbrStyle`), editable inline before you apply. On **Apply** it sets `postscriptFontName` and the `fileName` custom parameter on each instance, and warns about names that are missing a hyphen, longer than 29 characters, or duplicated — you can still apply anyway.
 
-It also has an optional **Pixelate** checkbox that adds a `Pixelate` filter custom parameter (grid size + placeholder glyph) to every instance at export, for bitmap-style builds.
-
 ### Installation
 
 1. Download `ShortNames.py`.
