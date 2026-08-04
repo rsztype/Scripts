@@ -1,5 +1,7 @@
 # ✂️ Short Names
 
+By Giuseppe Salerno ([Resistenza Type](https://rsztype.com)).
+
 A script for the [Glyphs font editor](https://glyphsapp.com/). It previews and applies short PostScript font names and file names for every exportable instance, abbreviating each style word (`Condensed` → `Cn`, `ExtraBold` → `XBd`, `SemiCondensed` → `SmCn`, etc.) while leaving the family and style names themselves untouched.
 
 ### What it does
@@ -27,6 +29,6 @@ Glyphs 3 or Glyphs 4.
 
 ### License
 
-Copyright 2026 Resistenza Type (rsztype.com).
+Copyright 2026 Giuseppe Salerno / Resistenza Type (rsztype.com).
 
 You may use, modify, and distribute this script freely. It is provided as-is, without warranty of any kind.

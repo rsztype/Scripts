@@ -1,5 +1,7 @@
 # 🔗 Style Linker
 
+By Giuseppe Salerno ([Resistenza Type](https://rsztype.com)).
+
 A script for the [Glyphs font editor](https://glyphsapp.com/). It previews and applies **style linking** for every exportable instance in a family: Bold, Italic, and Bold Italic instances get linked to their base style, including inside width groups (`Condensed Bold Italic` → `Condensed`, `Extended Italic` → `Extended`, etc.).
 
 Style linking is what lets apps that don't understand OpenType family relationships trigger the correct weight/style when the user presses the Bold or Italic button, instead of applying a synthetic (faux) bold/italic.
@@ -31,6 +33,6 @@ Glyphs 3 or Glyphs 4.
 
 ### License
 
-Copyright 2026 Resistenza Type (rsztype.com).
+Copyright 2026 Giuseppe Salerno / Resistenza Type (rsztype.com).
 
 You may use, modify, and distribute this script freely. It is provided as-is, without warranty of any kind.

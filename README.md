@@ -1,6 +1,6 @@
 # Resistenza Type — Glyphs Scripts
 
-Scripts for the [Glyphs font editor](https://glyphsapp.com/), by [Resistenza Type](https://rsztype.com).
+Scripts for the [Glyphs font editor](https://glyphsapp.com/), by Giuseppe Salerno ([Resistenza Type](https://rsztype.com)).
 
 ## Contents
 
@@ -9,4 +9,4 @@ Scripts for the [Glyphs font editor](https://glyphsapp.com/), by [Resistenza Typ
 
 ## License
 
-Each script's license is in its own subfolder. Unless noted otherwise, copyright 2026 Resistenza Type (rsztype.com) — free to use, modify, and distribute, provided as-is.
+Each script's license is in its own subfolder. Unless noted otherwise, copyright 2026 Giuseppe Salerno / Resistenza Type (rsztype.com) — free to use, modify, and distribute, provided as-is.
