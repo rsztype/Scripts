@@ -6,7 +6,7 @@ Scripts for the [Glyphs font editor](https://glyphsapp.com/), by Giuseppe Salern
 
 - [**🔗 StyleLinker**](docs/StyleLinker.md) — previews and applies style linking (Bold/Italic/Bold Italic) for exportable instances.
 - [**✂️ ShortNames**](docs/ShortNames.md) — previews and applies short PostScript font names and file names for exportable instances.
-- [**👯 MasterTwins**](docs/MasterTwins.md) — clones one master into another, choosing whether paths, components, anchors, metrics and hints travel.
+- [**👯 MasterTwins**](docs/MasterTwins.md) — clones one master into another, either the whole font or just the selected glyphs, choosing whether paths, components, anchors, metrics and hints travel.
 
 Each script is a single `.py` file at the top level here, so they all sit
 together in one flat *Script* menu once installed.
