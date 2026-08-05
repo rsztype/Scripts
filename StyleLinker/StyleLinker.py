@@ -10,6 +10,23 @@ Only whole words count: ExtraBold/SemiBold are NOT linked as Bold.
 import GlyphsApp
 import vanilla
 import vanilla.dialogs   # submodule isn't pulled in by `import vanilla` alone
+from AppKit import NSTableViewUniformColumnAutoresizingStyle
+
+
+def fit_columns(listView):
+	"""
+	No horizontal scroller, and columns that share out the width on resize.
+
+	The columns always add up to less than the window, so the scroller could
+	only ever appear empty — while still taking a strip off the bottom of the
+	list.
+	"""
+	try:
+		table = listView.getNSTableView()
+		table.setColumnAutoresizingStyle_(NSTableViewUniformColumnAutoresizingStyle)
+		table.enclosingScrollView().setHasHorizontalScroller_(False)
+	except Exception:
+		pass
 
 ITALIC_WORDS = ("Italic", "Oblique")
 
@@ -84,8 +101,11 @@ class StyleLinkerPanel:
 				{"title": "Italic", "editable": False, "width": 50},
 			],
 		)
+		fit_columns(self.w.list)
 		self.w.info = vanilla.TextBox((12, -56, -10, 17), f"{linked} of {len(items)} instances will be linked. '—' rows stay untouched.", sizeStyle="small")
-		self.w.cancelButton = vanilla.Button((-200, -32, 90, 20), "Cancel", callback=self.cancel)
+		# 16 between the two: at 10 the default button's wider bezel closes the
+		# gap and they read as one control
+		self.w.cancelButton = vanilla.Button((-206, -32, 90, 20), "Cancel", callback=self.cancel)
 		self.w.applyButton = vanilla.Button((-100, -32, 90, 20), "Apply", callback=self.apply)
 		self.w.setDefaultButton(self.w.applyButton)
 		self.w.open()
