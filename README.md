@@ -13,4 +13,4 @@ together in one flat *Script* menu once installed.
 
 ## License
 
-Copyright 2026 Giuseppe Salerno / Resistenza Type ([rsztype.com](https://rsztype.com)) — free to use, modify, and distribute, provided as-is. See [LICENSE.txt](LICENSE.txt).
+Copyright 2026 Giuseppe Salerno / Resistenza Type [rsztype.com](https://rsztype.com) — free to use, modify, and distribute, provided as-is. See [LICENSE.txt](LICENSE.txt).
