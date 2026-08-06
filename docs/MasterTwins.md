@@ -29,6 +29,6 @@ Glyphs 3 or Glyphs 4.
 
 ### License
 
-Copyright 2026 Giuseppe Salerno / Resistenza Type (rsztype.com).
+Copyright 2026 Giuseppe Salerno / Resistenza Type ([rsztype.com](https://rsztype.com)).
 
 You may use, modify, and distribute this script freely. It is provided as-is, without warranty of any kind.
