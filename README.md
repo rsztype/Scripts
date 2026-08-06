@@ -5,6 +5,7 @@ Scripts for the [Glyphs font editor](https://glyphsapp.com/), by Giuseppe Salern
 ## Contents
 
 - [**👯 MasterTwins**](docs/MasterTwins.md) — clones one master into another, either the whole font or just the selected glyphs, choosing whether paths, components, anchors, metrics and hints travel.
+- [**📮 Postino**](docs/Postino.md) — delivers the selected glyphs to any of the other open fonts, filling every master of the destination.
 - [**✂️ ShortNames**](docs/ShortNames.md) — previews and applies short PostScript font names and file names for exportable instances.
 - [**🔗 StyleLinker**](docs/StyleLinker.md) — previews and applies style linking (Bold/Italic/Bold Italic) for exportable instances.
 
