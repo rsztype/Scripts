@@ -75,6 +75,53 @@ def shorten_style(style_name):
 	return short or "Rg"
 
 
+def typographic_family(instance, font):
+	"""
+	The Typographic Family Name (name ID 16) when one is set, else the plain
+	family name.
+
+	They differ exactly when a family is split across several files — the
+	Condensed shipped as its own family, say. There the plain family name is
+	"Performa Condensed" while the typographic one is "Performa", and it is
+	the typographic one the abbreviated name should be built from, otherwise
+	the width word gets spelled out twice.
+
+	Where it lives moved between Glyphs versions, so every known spot is
+	tried: the instance first, then the font.
+	"""
+	def lookup(owner):
+		if owner is None:
+			return None
+
+		for attribute in ("preferredFamily", "preferredFamilyName"):
+			value = getattr(owner, attribute, None)
+			if value:
+				return value
+
+		# Glyphs 3+ keeps it among the localisable properties
+		try:
+			prop = owner.propertyForName_("preferredFamilyNames")
+			if prop is not None:
+				value = (getattr(prop, "defaultValue", None)
+					or getattr(prop, "value", None))
+				if value:
+					return value
+		except Exception:
+			pass
+
+		for key in ("typoFamilyName", "preferredFamily"):
+			try:
+				value = owner.customParameters[key]
+				if value:
+					return value
+			except Exception:
+				pass
+		return None
+
+	return (lookup(instance) or lookup(font)
+		or instance.familyName or font.familyName or "")
+
+
 def get_ps_name(instance):
 	return (
 		getattr(instance, "postscriptFontName", None)
@@ -110,7 +157,7 @@ class ShortNamesPanel:
 
 		items = []
 		for instance in self.instances:
-			family = (instance.familyName or font.familyName or "").replace(" ", "")
+			family = typographic_family(instance, font).replace(" ", "")
 			style = instance.name or getattr(instance, "styleName", None) or "Regular"
 			current = get_ps_name(instance) or instance.customParameters["postscriptFontName"] or ""
 			items.append({
