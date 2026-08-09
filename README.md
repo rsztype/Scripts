@@ -1,6 +1,6 @@
 # Resistenza Type — Glyphs Scripts
 
-Scripts for the [Glyphs font editor](https://glyphsapp.com/), by Giuseppe Salerno ([Resistenza Type](https://rsztype.com)).
+Scripts for the [Glyphs font editor](https://glyphsapp.com/), by Giuseppe Salerno co-founder of [Resistenza Type](https://rsztype.com).
 
 ## Contents
 
