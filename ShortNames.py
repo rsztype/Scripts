@@ -1,5 +1,6 @@
 # MenuTitle:✂️ ShortNames
 # -*- coding: utf-8 -*-
+__version__ = "1.0"
 __doc__ = """
 Make Short PS Names + File Names.
 Panel that previews abbreviated postscriptFontName / fileName for every exportable instance

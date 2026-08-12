@@ -1,5 +1,6 @@
 # MenuTitle: 👯 MasterTwins
 # -*- coding: utf-8 -*-
+__version__ = "1.0"
 __doc__ = """
 Copy a whole master into another one — every glyph in the font.
 Pick the two masters, see a glyph drawn on each side, choose what travels

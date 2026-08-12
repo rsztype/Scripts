@@ -1,5 +1,6 @@
 # MenuTitle: 🔗 StyleLinker
 # -*- coding: utf-8 -*-
+__version__ = "1.0"
 __doc__ = """
 Panel that previews automatic style linking for all exportable instances:
 Bold/Italic/Bold Italic link to their base style, also inside width groups

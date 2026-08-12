@@ -1,5 +1,6 @@
 # MenuTitle: 📮 Postino
 # -*- coding: utf-8 -*-
+__version__ = "1.0"
 __doc__ = """
 Deliver the selected glyphs to any of the other open fonts.
 Every master is matched by name, so Regular lands in Regular and Bold in
