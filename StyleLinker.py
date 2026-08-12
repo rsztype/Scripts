@@ -1,4 +1,4 @@
-# MenuTitle: 🔗 Style Linker
+# MenuTitle: 🔗 StyleLinker
 # -*- coding: utf-8 -*-
 __doc__ = """
 Panel that previews automatic style linking for all exportable instances:
@@ -90,7 +90,7 @@ class StyleLinkerPanel:
 				})
 
 		linked = sum(1 for l in self.links if l)
-		self.w = vanilla.FloatingWindow((520, 400), "🔗 Style Linker", minSize=(420, 260))
+		self.w = vanilla.FloatingWindow((520, 400), "🔗 StyleLinker", minSize=(420, 260))
 		self.w.list = vanilla.List(
 			(10, 10, -10, -70),
 			items,
@@ -133,14 +133,14 @@ class StyleLinkerPanel:
 			instance.linkStyle = "" if base == "Regular" else base
 			count += 1
 
-		Glyphs.showNotification("🔗 Style Linker", f"{count} instances linked in {self.font.familyName}.")
+		Glyphs.showNotification("🔗 StyleLinker", f"{count} instances linked in {self.font.familyName}.")
 		self.closePanel()
 
 
 font = Glyphs.font
 if font is None:
-	vanilla.dialogs.message("Style Linker", "No font open.")
+	vanilla.dialogs.message("StyleLinker", "No font open.")
 elif not font.instances:
-	vanilla.dialogs.message("Style Linker", "No instances in Font Info → Exports.")
+	vanilla.dialogs.message("StyleLinker", "No instances in Font Info → Exports.")
 else:
 	StyleLinkerPanel(font)
