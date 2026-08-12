@@ -1,4 +1,4 @@
-# 🔗 Style Linker
+# 🔗 StyleLinker
 
 By Giuseppe Salerno ([Resistenza Type](https://rsztype.com)).
 
@@ -8,7 +8,7 @@ Style linking is what lets apps that don't understand OpenType family relationsh
 
 Only whole words count when matching: `ExtraBold` and `SemiBold` are never linked as `Bold`.
 
-<img src="StyleLinkerScreenshot.png" alt="Style Linker preview panel." title="Style Linker Screenshot" width="450">
+<img src="StyleLinkerScreenshot.png" alt="StyleLinker preview panel." title="StyleLinker Screenshot" width="450">
 
 ### What it does
 
@@ -25,7 +25,7 @@ On Apply, it sets `isBold`, `isItalic`, and `linkStyle` on the linked instances 
 ### Usage
 
 1. Open a font with instances set up in *Font Info > Exports*.
-2. Run **🔗 Style Linker** from the *Script* menu.
+2. Run **🔗 StyleLinker** from the *Script* menu.
 3. Check the preview table — rows with `—` in "Links to" are left untouched.
 4. Click **Apply**.
 
