@@ -1,6 +1,6 @@
 # MenuTitle: 🔗 StyleLinker
 # -*- coding: utf-8 -*-
-__version__ = "1.0"
+__version__ = "1.01"
 __doc__ = """
 Panel that previews automatic style linking for all exportable instances:
 Bold/Italic/Bold Italic link to their base style, also inside width groups
@@ -9,6 +9,7 @@ Only whole words count: ExtraBold/SemiBold are NOT linked as Bold.
 """
 
 import GlyphsApp
+from GlyphsApp import Glyphs   # predefinito negli script, non nei moduli
 import vanilla
 import vanilla.dialogs   # submodule isn't pulled in by `import vanilla` alone
 from AppKit import NSTableViewUniformColumnAutoresizingStyle
@@ -124,17 +125,36 @@ class StyleLinkerPanel:
 
 	def apply(self, sender):
 		count = 0
+		stubborn = []
 		for instance, link in zip(self.instances, self.links):
 			if not link:
 				continue
 			base, is_bold, is_italic = link
 			instance.isBold = is_bold
 			instance.isItalic = is_italic
-			# empty linkStyle means "linked to Regular" in Glyphs
-			instance.linkStyle = "" if base == "Regular" else base
+			# The base style is written by name, Regular included. An empty
+			# linkStyle was meant to stand for "linked to Regular", but Glyphs
+			# writes the word itself — set the field by hand in Font Info and
+			# the file comes back saying linkStyle = Regular. Leaving it empty
+			# left the plain Bold and Italic of a family unlinked while every
+			# width group looked fine, and nothing said so.
+			instance.linkStyle = base
+			# letto indietro, non dato per scritto: un valore che non attecchisce
+			# e indistinguibile da un pannello che non ha fatto niente
+			try:
+				if (instance.linkStyle or "") != base:
+					stubborn.append(instance.name)
+			except Exception:
+				pass
 			count += 1
 
-		Glyphs.showNotification("🔗 StyleLinker", f"{count} instances linked in {self.font.familyName}.")
+		if stubborn:
+			Glyphs.showNotification("🔗 StyleLinker",
+				f"{count} linked, but {len(stubborn)} would not take it: "
+				f"{', '.join(stubborn[:3])}")
+		else:
+			Glyphs.showNotification("🔗 StyleLinker",
+				f"{count} instances linked in {self.font.familyName}.")
 		self.closePanel()
 
 
