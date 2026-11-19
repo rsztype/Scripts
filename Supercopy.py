@@ -3,19 +3,27 @@
 __doc__ = """
 Copies the selected glyphs as real text, not /glyphnames, so they paste into another Glyphs file or any other app. Ligatures, conjuncts and positional forms go back to the characters they are made of, which makes it work well for complex scripts: Arabic (veh_yehbarree.ar.fina becomes ڤے, lam_alef-ar لا), Hebrew, Devanagari and Bengali conjuncts (k_ssa-deva becomes क्ष), and Latin ligatures (f_f_i becomes ffi).
 """
-__version__ = "1.04"
+__version__ = "1.05"
 
 import re
+import unicodedata
 
 VERSIONE = __version__
 SEGNI_SENZA_TESTO = ("Mark",)  # components such as threedotsupabove.ar have no character
+
+
+# Forme di presentazione (ﬁ, ﭏ, ﻻ, שּ): tornano alle lettere da cui sono fatte.
+PRESENTAZIONE = ((0xFB00, 0xFDFF), (0xFE70, 0xFEFF))
 
 
 def carattere_da_unicode(glifo):
 	codici = glifo.unicodes or ([glifo.unicode] if glifo.unicode else [])
 	if not codici:
 		return None
-	return chr(int(codici[0], 16))
+	codice = int(codici[0], 16)
+	if any(da <= codice <= a for da, a in PRESENTAZIONE):
+		return unicodedata.normalize("NFKC", chr(codice))
+	return chr(codice)
 
 
 def carattere_da_nome(nome, font, suffissi):

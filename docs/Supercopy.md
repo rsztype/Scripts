@@ -17,10 +17,10 @@ Supercopy takes each glyph back to the characters it stands for and puts that te
 That makes it work well for **complex scripts**, where most of what you see in an Edit tab has no Unicode value:
 
 - **Arabic**: positional forms and ligatures (`beh-ar.init` → ب, `lam_alef-ar` → لا, `veh_yehbarree.ar.fina` → ڤے)
-- **Hebrew**: letters, final forms and the precomposed letters with points (`shindagesh-hb` → שּ)
+- **Hebrew**: letters, final forms and the letters with points (`shindagesh-hb` → ש + dagesh)
 - **Devanagari**: half forms and conjuncts (`k-deva` → क्, `k_ssa-deva` → क्ष)
 - **Bengali**: conjuncts (`k_ssa-beng` → ক্ষ)
-- **Latin** ligatures and alternates (`f_f_i` → ffi, `s_t` → st, `a.ss01` → a, `one.tf` → 1)
+- **Latin**: ligatures, alternates, small caps and figures (`f_f_i` → ffi, `s_t` → st, `T_h` → Th, `Q_u` → Qu, `a.ss01` → a, `a.sc` → a, `one.tf` → 1, and `fi` → fi instead of the ﬁ compatibility character)
 
 Marks that only exist as components (`threedotsupabove.ar`, `dotbelow-ar`) add no text. A glyph that cannot be traced back, such as `.notdef` or a helper part, is skipped, and the notification names it.
 
