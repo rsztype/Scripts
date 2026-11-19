@@ -6,11 +6,12 @@ Scripts for the [Glyphs font editor](https://glyphsapp.com/), by Giuseppe Salern
 https://resistenza.es/glyphs/
 ## Contents
 
+- [**◣ 45°**](docs/45.md) — adds a node wherever a curve leans at 45° (or any angle), the way Glyphs adds one at the extremes, without moving the outline.
 - [**👯 MasterTwins**](docs/MasterTwins.md) — clones one master into another, either the whole font or just the selected glyphs, choosing whether paths, components, anchors, metrics and hints travel.
 - [**📮 Postino**](docs/Postino.md) — delivers the selected glyphs to any of the other open fonts, filling every master of the destination.
 - [**✂️ ShortNames**](docs/ShortNames.md) — previews and applies short PostScript font names and file names for exportable instances.
-- [**📋 Supercopy**](docs/Supercopy.md) — copies the selected glyphs as real text instead of /glyphnames, ligatures, conjuncts and positional forms back to their characters; works well for complex scripts (Arabic, Hebrew, Devanagari, Bengali) and Latin ligatures.
 - [**🔗 StyleLinker**](docs/StyleLinker.md) — previews and applies style linking (Bold/Italic/Bold Italic) for exportable instances.
+- [**📋 Supercopy**](docs/Supercopy.md) — copies the selected glyphs as real text instead of /glyphnames, ligatures, conjuncts and positional forms back to their characters; works well for complex scripts (Arabic, Hebrew, Devanagari, Bengali) and Latin ligatures.
 
 Each script is a single `.py` file at the top level here, so they all sit
 together in one flat *Script* menu once installed.
