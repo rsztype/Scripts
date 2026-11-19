@@ -4,6 +4,8 @@ By Giuseppe Salerno [rsztype.com](https://rsztype.com).
 
 A script for the [Glyphs font editor](https://glyphsapp.com/). It copies the selected glyphs as real text instead of `/glyphnames`, so they paste into another Glyphs file, where that font shapes them again, or into any other app.
 
+![What ⌘C copies from a Glyphs Edit tab, next to what Supercopy copies](SupercopyScreenshot.png)
+
 ### What it does
 
 When you copy letters in an Edit tab, Glyphs writes a `/name` for every glyph that has no Unicode value of its own. Ligatures, conjuncts, positional forms and alternates have none, so a line of Arabic comes out as `/veh_yehbarree.ar.fina/…`. Another app cannot read that, and another font may not have glyphs with the same names.
