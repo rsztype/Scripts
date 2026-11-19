@@ -11,7 +11,7 @@ https://resistenza.es/glyphs/
 - [**📮 Postino**](docs/Postino.md) — delivers the selected glyphs to any of the other open fonts, filling every master of the destination.
 - [**✂️ ShortNames**](docs/ShortNames.md) — previews and applies short PostScript font names and file names for exportable instances.
 - [**🔗 StyleLinker**](docs/StyleLinker.md) — previews and applies style linking (Bold/Italic/Bold Italic) for exportable instances.
-- [**📋 Supercopy**](docs/Supercopy.md) — copies the selected glyphs as real text instead of /glyphnames, ligatures, conjuncts and positional forms back to their characters; works well for complex scripts (Arabic, Hebrew, Devanagari, Bengali) and Latin ligatures.
+- [**📋 Supercopy**](docs/Supercopy.md) — copies the selected glyphs as real text, not /glyphnames, even ligatures and complex scripts.
 
 Each script is a single `.py` file at the top level here, so they all sit
 together in one flat *Script* menu once installed.
